@@ -1,21 +1,14 @@
 import { StyleSheet, SafeAreaView } from 'react-native';
-import { useState, useEffect } from 'react';
 import { SegmentedButtons } from 'react-native-paper';
 
-const Selector = ({ options = [], props }) => {
-  const [selectedOpt, setSelectedOpt] = useState('');
-
-  useEffect(() => {
-    props.tornarOpt({ opt: selectedOpt })
-  }, [selectedOpt])
-
+const Selector = ({ options = [], value, onValueChange }) => {
   return (
     <SafeAreaView style={styles.container}>
       <SegmentedButtons
-        value={selectedOpt}
-        onValueChange={setSelectedOpt}
-        buttons={options.map((elem, index) => ({
-          value: index,
+        value={value}
+        onValueChange={onValueChange}
+        buttons={options.map((elem) => ({
+          value: elem,
           label: elem,
         }))}
       />
