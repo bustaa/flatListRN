@@ -3,6 +3,10 @@ import { useState } from 'react';
 import Selector from './src/components/Selector';
 import ElementLlista from './src/components/ElementLlista';
 import { getProfes } from './utils/funcions';
+import './assets/i18n';
+import { useTranslation } from 'react-i18next';
+
+const { t } = useTranslation();
 
 const App = () => {
   const [selectedCicle, setSelectedCicle] = useState('DAM');
@@ -15,11 +19,11 @@ const App = () => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.contSel}>
-        <Text style={styles.contSelTxt}>Cicles: </Text>
+        <Text style={styles.contSelTxt}>{t('selector.cicle')}</Text>
         <Selector options={["DAM", "DAW", "ASIR"]} value={selectedCicle} onValueChange={setSelectedCicle}/>
       </View>
       <View style={styles.contSel}>
-        <Text style={styles.contSelTxt}>Curs: </Text>
+        <Text style={styles.contSelTxt}>{t('selector.curs')}</Text>
         <Selector options={["1r", "2n"]} value={selectedCurs} onValueChange={setSelectedCurs}/>
       </View>
       <FlatList

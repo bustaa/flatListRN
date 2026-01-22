@@ -1,0 +1,9 @@
+{
+    "selector": {
+        "cicle": "Cicles:",
+        "curs": "Curs:"
+    },
+    "flatListElem": {
+        "horesSem": "Hores setmanals: "
+    }
+}
